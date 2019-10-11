@@ -1,22 +1,16 @@
-.App {
-  text-align: center;
+body{
+  background-color: beige;
 }
 
-.App-logo {
-  height: 40vmin;
+.poster-image{
+  width: 100%;
+  height: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.details{
+  border-left: 1px solid gainsboro;
 }
 
-.App-link {
-  color: #09d3ac;
+.review {
+  border-bottom: 1px solid gainsboro;
 }
