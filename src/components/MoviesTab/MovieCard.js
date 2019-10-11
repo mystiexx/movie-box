@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Card from 'react-bootstrap/Card'
 import CardGroup from 'react-bootstrap/CardGroup'
 import { Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 class MovieCard extends Component {
     constructor() {
@@ -37,7 +38,11 @@ class MovieCard extends Component {
                                                 <Col>
                                                     <Card.Body>
                                                         <div className='d-flex flex-column'>
-                                                            <h4>{data.original_title}</h4>
+                                                            <h4>
+                                                                <Link to={`/movies/${data.id}`}>
+                                                            {data.original_title}
+                                                            </Link>
+                                                            </h4>
                                                             <h6>{data.release_date}</h6>
                                                         </div>
 
