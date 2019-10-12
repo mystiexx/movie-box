@@ -42,7 +42,6 @@ class ShowMovies extends Component {
     
     render() {
         const { movies, reviews, similar } = this.state
-        console.log(similar)
         return (
             <div className="top">
 
@@ -51,7 +50,7 @@ class ShowMovies extends Component {
                         {movies.map((movies, i) =>
                             <Row>
                                 <Col md={2} key={i}>
-                                    <img src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movies.poster_path}`} className="poster-image" alt="poster" />
+                                    <img src={`https://image.tmdb.org/t/p/original/${movies.poster_path}`} className="poster-image" alt="poster" />
                                 </Col>
                                 <Col>
                                     <Card.Body>
@@ -95,9 +94,9 @@ class ShowMovies extends Component {
 
                             </Col>
 
-                            <Col className="details" md={2}>
+                            <Col md={2}>
                                 {movies.map((data, i) =>
-                                    <div className="p-3" key={i}>
+                                    <div className="p-3 facts" key={i}>
                                         <h6>Facts</h6>
                                         <h6>Status</h6>
                                         <p>{data.status}</p>
