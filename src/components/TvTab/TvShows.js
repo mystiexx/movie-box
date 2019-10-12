@@ -23,7 +23,7 @@ class TvShows extends Component{
         const { shows } = this.state
         console.log(shows)
         return(
-            <div>
+            <div className="top">
                 <Container className="pb-5">
 
                 <h4 className="mt-5 pb-3">Popular Tv Shows</h4>

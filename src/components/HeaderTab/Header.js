@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import {Navbar, Nav} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import logo from './logo.png'
 
 class Header extends Component {
     render() {
         return (
             <div>
-                <Navbar bg="dark" expand="lg" variant="dark">
-                    <Navbar.Brand href="#home">Movie-Box</Navbar.Brand>
+                <Navbar expand="lg" className="nav" variant="dark" fixed="top">
+                    <Navbar.Brand>
+                        <img src={logo} className="d-inline-block align-center logo" alt="logo"/>
+                        Movie-Box</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">

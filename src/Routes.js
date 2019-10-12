@@ -4,6 +4,7 @@ import App from './App'
 import TvShows from './components/TvTab/TvShows'
 import Header from './components/HeaderTab/Header'
 import ShowMovies from './components/MoviesTab/ShowMovies'
+import Footer from './components/HeaderTab/Footer'
 
 class Routes extends Component{
     render(){
@@ -18,6 +19,7 @@ class Routes extends Component{
                 <Route exact component={ShowMovies} path='/movies/:id'/>
             
                 </Switch>
+                <Footer/>
             </div>
             </Router>
         )

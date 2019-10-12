@@ -29,7 +29,7 @@ class MovieCard extends Component {
                             return (
                                 <Col md={6} key={i}>
                                     <CardGroup className='' key={i}>
-                                        <Card border='light' key={i} className='movie-card mt-3 mb-5 shadow-sm'>
+                                        <Card key={i} className='movie-card mt-3 mb-5 shadow-sm'>
                                             <Row>
                                                 <Col md={4}>
                                                     <Card.Img src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${data.poster_path}`} alt='card-img' variant="top" />
