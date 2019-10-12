@@ -3,24 +3,17 @@ import axios from 'axios'
 import { Container, Row, Col, Card, Badge } from 'react-bootstrap'
 import { FaStar } from 'react-icons/fa'
 import Reviews from './Reviews'
+import Similar from './Similar'
 
 class ShowMovies extends Component {
     constructor() {
         super()
         this.state = {
             movies: [],
-            reviews: []
+            reviews: [],
+            similar: []
         }
 
-    }
-
-    componentWillMount() {
-        const { match } = this.props
-        axios.get(`https://api.themoviedb.org/3/movie/${match.params.id}?api_key=d0ff6f9cb6c33dcc6bc0c0a6381f2884&language=en-US`)
-            .then(res => {
-                const movies = [res.data];
-                this.setState({ movies })
-            })
     }
 
     componentDidMount(){
@@ -30,15 +23,31 @@ class ShowMovies extends Component {
             const reviews = [res.data];
             this.setState({ reviews })
         })
+
+        axios.get(`https://api.themoviedb.org/3/movie/${match.params.id}/similar?api_key=d0ff6f9cb6c33dcc6bc0c0a6381f2884&language=en-US&page=1`)
+        .then(res=> {
+            const similar = [res.data];
+            this.setState({ similar })
+        })
     }
+
+    componentWillUpdate() {
+        const { match } = this.props
+        axios.get(`https://api.themoviedb.org/3/movie/${match.params.id}?api_key=d0ff6f9cb6c33dcc6bc0c0a6381f2884&language=en-US`)
+            .then(res => {
+                const movies = [res.data];
+                this.setState({ movies })
+            })
+    }
+    
     render() {
-        const { movies, reviews } = this.state
-        console.log(reviews)
+        const { movies, reviews, similar } = this.state
+        console.log(similar)
         return (
-            <div>
+            <div className="top">
 
                 <Container className="mt-5 pb-5">
-                    <Card className="shadow" border="light">
+                    <Card className="shadow-sm">
                         {movies.map((movies, i) =>
                             <Row>
                                 <Col md={2} key={i}>
@@ -71,6 +80,17 @@ class ShowMovies extends Component {
                                        )
                                    })
                                 }
+                                <div className="similar overflow-auto">
+                                    {
+                                        similar.map((data,i)=>{
+                                            return(
+                                                <Similar data={data.results} key={i} />
+                                            )
+                                        })
+                                    }
+                                   
+
+                                </div>
                                
 
                             </Col>

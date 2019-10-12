@@ -1,5 +1,5 @@
 body{
-  background-color: beige;
+  background-color: rgb(255, 255, 255);
 }
 
 .poster-image{
@@ -13,4 +13,51 @@ body{
 
 .review {
   border-bottom: 1px solid gainsboro;
+}
+
+.logo{
+  width: 70px;
+  height: 70px;
+}
+
+.nav{
+  background-color: black;
+}
+
+.footer {
+  background-color: black;
+  height: 60vh;
+  color: white;
+}
+
+.footer-text{
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.footer-title{
+  text-transform: uppercase;
+  font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.top{
+  margin-top: 35%; 
+}
+
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    background-color: black;
+    height: 30vh;
+    color: white;
+  }
+
+  .top{
+    margin-top: 8%; 
+  }
 }
