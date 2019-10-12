@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Card from 'react-bootstrap/Card'
 import CardGroup from 'react-bootstrap/CardGroup'
 import { Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 class ShowCard extends Component {
     constructor() {
@@ -31,13 +32,16 @@ class ShowCard extends Component {
                                         <Card border='light' key={i} className='movie-card mt-3 mb-5 shadow-sm'>
                                             <Row>
                                                 <Col md={4}>
-                                                    <Card.Img src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${data.poster_path}`} alt='card-img' variant="top" />
+                                                    <Card.Img src={`https://image.tmdb.org/t/p/original/${data.poster_path}`} alt='card-img' variant="top" />
                                                 </Col>
 
                                                 <Col>
                                                     <Card.Body>
                                                         <div className='d-flex flex-column'>
-                                                            <h4>{data.original_name}</h4>
+                                                            <h4>
+                                                            <Link to={`/tvshows/${data.id}`}>
+                                                            {data.original_name} </Link>
+                                                            </h4>
                                                             <h6>{data.first_air_date}</h6>
                                                         </div>
 

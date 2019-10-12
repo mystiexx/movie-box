@@ -16,18 +16,17 @@ class Similar extends Component {
     }
     render() {
         const { similar } = this.state
-        console.log(similar)
         return (
             <div>
-                <div className="similar p-4 d-flex justify-content-center">
+                <div className="similar p-4">
                     <Row>
                     {
                         similar.slice(0,3).map((data,i)=> {
                             return(
                                 <div>
-                                    <Col md={12}>
-                                    <Card>
-                                        <Card.Img src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${data.poster_path}`} variant="top"  alt="similar" />
+                                    <Col md={10}>
+                                    <Card style={{ width: '18rem' }}>
+                                        <Card.Img src={`https://image.tmdb.org/t/p/original/${data.poster_path}`} className="similar-image" variant="top"  alt="similar" />
                                         <Card.Body>
                                             <Card.Title>
                                                 <Link to = {`/movies/${data.id}`} >
