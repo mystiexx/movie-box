@@ -75,7 +75,7 @@ class ShowTv extends Component {
                                                     <Card.Body>
                                                         <div className='d-flex flex-column p-4'>
                                                             <h4>
-                                                                <Link to={`/movies/${sea.id}`}>
+                                                                <Link to={`/tvshows/${sea.id}`}>
                                                             {sea.name}
                                                             </Link>
                                                             </h4>
@@ -155,11 +155,13 @@ class ShowTv extends Component {
                                                      return(
                                                          <div key={create.id}>
                                                              <Row>
-                                                                 <Col>
+                                                                 <Col md={4} className="mt-2">
                                                                  <img src={`https://image.tmdb.org/t/p/original/${create.profile_path}`} className="profile" alt="profile"/>
                                                                  </Col>
                                                                  <Col>
+                                                                 <Card.Text className="mt-4">
                                                                  {create.name}
+                                                                 </Card.Text>
                                                                  </Col>
                                                              </Row>
                                                              </div>

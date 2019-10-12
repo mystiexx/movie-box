@@ -31,7 +31,7 @@ class ShowMovies extends Component {
         })
     }
 
-    componentWillUpdate() {
+    componentWillMount() {
         const { match } = this.props
         axios.get(`https://api.themoviedb.org/3/movie/${match.params.id}?api_key=d0ff6f9cb6c33dcc6bc0c0a6381f2884&language=en-US`)
             .then(res => {
