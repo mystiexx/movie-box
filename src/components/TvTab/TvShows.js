@@ -8,10 +8,11 @@ class TvShows extends Component{
         super()
         this.state = {
             shows: [],
+           
         }
     }
     componentDidMount(){
-        axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=d0ff6f9cb6c33dcc6bc0c0a6381f2884&language=en-US`)
+        axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=d0ff6f9cb6c33dcc6bc0c0a6381f2884&language=en-US&page=1`)
         .then(res => {
           const shows = [res.data];
           this.setState({ shows });
@@ -21,7 +22,6 @@ class TvShows extends Component{
 
     render(){
         const { shows } = this.state
-        console.log(shows)
         return(
             <div className="top">
                 <Container className="pb-5">
@@ -34,7 +34,7 @@ class TvShows extends Component{
                     {
                         shows.map((data,i)=>{
                             return(
-                                <ShowCard data={data.results} key={i}/>
+                                <ShowCard data={data.results} key={i} current_page={data.page} per_page={data.results} total={data.total_results}/>
                             )
                         }
                         

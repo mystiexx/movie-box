@@ -63,9 +63,9 @@ class ShowTv extends Component {
                                 return(
                                     <div>
                                         {
-                                            seas.seasons.map((sea, i)=>{
+                                            seas.seasons.slice(0,2).map((sea, i)=>{
                                                 return(
-                                                    <Card className="mt-3">
+                                                    <Card className="mt-3" key={i}>
                                                          <Row>
                                                 <Col md={4}>
                                                     <Card.Img src={`https://image.tmdb.org/t/p/original/${sea.poster_path}`} alt='card-img' variant="top" />

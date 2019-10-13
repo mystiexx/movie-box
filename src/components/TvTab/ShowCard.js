@@ -9,17 +9,23 @@ class ShowCard extends Component {
         super()
         this.state = {
             movie: [],
+            total: null,
+            per_page: null,
+            current_page: null,
         }
 
 
     }
 
     componentDidMount() {
-        const { data } = this.props
-        this.setState({ movie: data })
+        const { data, current_page, per_page, total } = this.props
+        this.setState({ movie: data, total:total, current_page: current_page, per_page:per_page })
     }
     render() {
-        const { movie } = this.state
+        const { movie, total, per_page, current_page } = this.state
+        console.log(total)
+        console.log(per_page)
+        console.log(current_page)
         return (
             <div>
                 <Row>
